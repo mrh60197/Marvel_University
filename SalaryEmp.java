@@ -20,9 +20,9 @@ public class SalaryEmp extends Employee {
 	  * @param[in] _mIRD		Employee IRD number
 	  * @param[in] _mAPay	SalaryEmp annual pay 
 	  */
-	public SalaryEmp(String _mFName, String _mGName, String _mIRD, double mAPay) {
+	public SalaryEmp(String _mFName, String _mGName, String _mIRD, double _mAPay) {
 		super(_mFName, _mGName, _mIRD);
-		mAPay = _mAPay
+		mAPay = _mAPay;
 	}	
 	/**
 	  * Returns mAPay 
@@ -33,5 +33,14 @@ public class SalaryEmp extends Employee {
 	  * Mutates mAPay
 	  * @param[in] _mAPay Assigns mAPay with the value _mAPay
 	  */
-	public void setMAPay(double _mAPay) { mAPay = _mAPay; }	
+	public void setMAPay(double _mAPay) { mAPay = _mAPay; }
+	/**
+	  * Calculates the monthly net wages for the Prof object less leave days
+	  * and tax deducted
+	  * @return total monthly net wages
+	  */
+	@Override
+	public double getNetMonthlyPay() {
+		return mAPay / 12;
+	}
 }

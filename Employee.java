@@ -38,22 +38,23 @@ public abstract class Employee {
 	  * Mutates mFName 
 	  * @param[in] _mFName Assigns mFName with the value _mFName
 	  */	
-	public String setMFName(String _mFName) { mFName = _mFName; }
+	public void setMFName(String _mFName) { mFName = _mFName; }
 	/**
 	  * Mutates mGName
 	  * @param[in] _mGName Assigns mGName with the value _mGName
 	  */
-	public String setMGName(String _mGName) { mGName = _mGName; }
+	public void setMGName(String _mGName) { mGName = _mGName; }
 	/**
 	  * Mutates mIRD
 	  * @param[in] _mIRD Assigns mIRD with the value _mIRD
 	  */
-	public String setMIRD(String _mIRD) { mIRD = _mIRD; }
+	public void setMIRD(String _mIRD) { mIRD = _mIRD; }
 	/**
 	  * Displays the mIRD, mFName and mGName data members for the Employee object
-	  * @param[in] _cout	 The stream used to display the data members
 	  */
-	public void print() { System.out.print(mFName + "\t" + mGName + "\t" + mIRD); }
+	public void print() { 
+		System.out.print(String.format("%-20s %-15s %-20s", mIRD, mFName, mGName));
+	}
 	/**
 	  * Calculates the monthly net wages for the Employee object
 	  * @return total monthly net wages

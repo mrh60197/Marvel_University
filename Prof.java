@@ -1,3 +1,7 @@
+//=================================================================================
+/**
+ * A class representing a Professor
+ */
 public final class Prof extends SalaryEmp {
 	private int mDaysLeave; ///< Number of unpaid leave days.
 	private final int mTax = 28; 	///< Percent deductions from salary.
@@ -5,7 +9,10 @@ public final class Prof extends SalaryEmp {
 	  * Default Constructor
 	  * Initializes an Prof object and sets data members
 	  */
-	public Prof() { mDaysLeave = 0; }
+	public Prof() { 
+		super("NO_TA", "NO_TA", "TA00-0000-000", 0.0);
+		mDaysLeave = 0;
+	}
 	/**
 	  * Constructor
 	  * Initializes an Prof object and sets data members
@@ -23,25 +30,29 @@ public final class Prof extends SalaryEmp {
 	  * Returns mDaysLeave 
 	  * @return mDaysLeave
 	  */
-	int getMDaysLeave() const;
+	public int getMDaysLeave() { return mDaysLeave; };
 	/**
 	  * Mutates mDaysLeave
 	  * @param[in] _mDaysLeave Assigns mDaysLeave with the value _mDaysLeave
 	  */
-	void setMDaysLeave(int _mDaysLeave);
+	public void setMDaysLeave(int _mDaysLeave) { mDaysLeave = _mDaysLeave; };
 	/**
 	  * Displays the mIRD, mFName, mGName and monthly net pay for the Employee object
-	  * @param[in] _cout	 The stream used to display the values
 	  */
-	void print() {
+	public void print() {
 		super.print();
-		System.out.print("\t" + mDaysLeave + "\n");
+		System.out.print("$" + this.getNetMonthlyPay() + "\n");
 	}
 	/**
 	  * Calculates the monthly net wages for the Prof object less leave days
 	  * and tax deducted
 	  * @return total monthly net wages
 	  */
-	double getNetMonthlyPay();
+	@Override
+	public double getNetMonthlyPay() {
+		double totalMonthlyLeaveDeductions = (super.getMAPay() / 365.0) * this.getMDaysLeave();	
+		double monthlySalaryLessLeave = (super.getMAPay() / 12) - totalMonthlyLeaveDeductions;
+		return (double)(Math.round((monthlySalaryLessLeave - (monthlySalaryLessLeave * (mTax / 100.0))) * 100d) / 100d);
+	}
 	
 }
