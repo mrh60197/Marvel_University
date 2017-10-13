@@ -10,7 +10,7 @@ public class SalaryEmp extends Employee {
 	  */
 	public SalaryEmp() {
 		super("NO_PR", "NO_PR", "PR00-0000-000");
-		mAPay = 0;
+		this.mAPay = 0;
 	}
 	/**
 	  * Constructor
@@ -22,7 +22,7 @@ public class SalaryEmp extends Employee {
 	  */
 	public SalaryEmp(String _mFName, String _mGName, String _mIRD, double _mAPay) {
 		super(_mFName, _mGName, _mIRD);
-		mAPay = _mAPay;
+		this.mAPay = _mAPay;
 	}	
 	/**
 	  * Returns mAPay 

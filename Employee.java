@@ -15,9 +15,9 @@ public abstract class Employee {
 	  * @param[in] _mIRD		Employee IRD number
 	  */
 	public Employee(String _mFName, String _mGName, String _mIRD) {
-		mFName = _mFName;
-		mGName = _mGName;
-		mIRD = _mIRD;
+		this.mFName = _mFName;
+		this.mGName = _mGName;
+		this.mIRD = _mIRD;
 	}
 	/**
 	  * Returns mFName
@@ -50,10 +50,11 @@ public abstract class Employee {
 	  */
 	public void setMIRD(String _mIRD) { mIRD = _mIRD; }
 	/**
-	  * Displays the mIRD, mFName and mGName data members for the Employee object
+	  * Converts Employee data members to strings and sets a format for display
+	  * @return formatted and concatenated string
 	  */
-	public void print() { 
-		System.out.print(String.format("%-20s %-15s %-20s", mIRD, mFName, mGName));
+	public String toString() {
+		return String.format("%-20s %-15s %-20s", mIRD, mFName, mGName);
 	}
 	/**
 	  * Calculates the monthly net wages for the Employee object

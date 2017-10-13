@@ -10,8 +10,8 @@ public final class Admin extends SalaryEmp {
 	  * Initializes an Admin object and sets data members
 	  */
 	public Admin() { 
-		super("NO_TA", "NO_TA", "TA00-0000-000", 0.0);
-		mJob = ""; 
+		super("NO_ADM", "NO_ADM", "ADM00-0000-000", 0.0);
+		this.mJob = ""; 
 	}
 	/**
 	  * Constructor
@@ -24,7 +24,7 @@ public final class Admin extends SalaryEmp {
 	  */
 	public Admin(String _mFName, String _mGName, String _mIRD, double _mAPay, String _mJob) {
 		super(_mFName, _mGName, _mIRD, _mAPay);
-		mJob = _mJob;
+		this.mJob = _mJob;
 	}
 	/**
 	  * Returns mJob 
@@ -37,11 +37,12 @@ public final class Admin extends SalaryEmp {
 	  */
 	public void setMJob(String _mJob) { mJob = _mJob; }
 	/**
-	  * Displays the mIRD, mFName and mGName data members for the Admin object
+	  * Converts Employee data members to strings and sets a format for display
+	  * @return formatted and concatenated string
 	  */
-	public void print() {
-		super.print();
-		System.out.print("$" + this.getNetMonthlyPay() + "\n");
+	@Override
+	public String toString(){
+		return super.toString() + String.format("$%-20s", getNetMonthlyPay());
 	}
 	/**
 	  * Calculates the monthly net wages for the Admin object less tax rate deductions

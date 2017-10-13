@@ -24,10 +24,11 @@ public class Main {
 		double totalToPay = 0.0;		
 		for(int i = 0; i < SIZE; ++i) {
 			totalToPay += emps[i].getNetMonthlyPay();
-			emps[i].print();			
-		}		
-		System.out.println("\nTotal wages this month: $" + totalToPay);
-		System.out.println("Thank you for using our program! Bye!");		
+			System.out.println(emps[i]);
+		}
+		System.out.println(toString("\nTotal wages this month: $", totalToPay));
+		//System.out.println("\nTotal wages this month: $" + totalToPay);
+		System.out.println("Thank you for using our program! Bye!");
 	}
 	
 	public static void info() {

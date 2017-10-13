@@ -13,9 +13,9 @@ public final class TEmp extends Employee {
 	  */
 	public TEmp() {
 		super("NO_TA", "NO_TA", "TA00-0000-000");
-		mID = "NO_TA"; 
-		mHWorked = 0;
-		mHPay = 0;
+		this.mID = "NO_TA"; 
+		this.mHWorked = 0;
+		this.mHPay = 0;
 	}
 	/**
 	  * Constructor
@@ -29,9 +29,9 @@ public final class TEmp extends Employee {
 	  */
 	public TEmp(String _mFName, String _mGName, String _mIRD, String _mID, int _mHWorked, double _mHPay) {
 		super(_mFName, _mGName, _mIRD);
-		mID = _mID;
-		mHWorked = _mHWorked;
-		mHPay = _mHPay;
+		this.mID = _mID;
+		this.mHWorked = _mHWorked;
+		this.mHPay = _mHPay;
 	}
 	/**
 	  * Returns mID 
@@ -64,11 +64,12 @@ public final class TEmp extends Employee {
 	  */
 	public void setMHPay(double _mHPay) { mHPay = _mHPay; }
 	/**
-	  * Displays the mIRD, mFName and mGName data members for the TEmp object
+	  * Converts Employee data members to strings and sets a format for display
+	  * @return formatted and concatenated string
 	  */
-	public void print() {
-		super.print();
-		System.out.print("$" + this.getNetMonthlyPay() + "\n");
+	@Override
+	public String toString(){
+		return super.toString() + String.format("$%-20s", getNetMonthlyPay());
 	}
 	/**
 	  * Calculates the monthly net wages by multiplying mHWorked by mHPay

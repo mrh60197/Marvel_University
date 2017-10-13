@@ -10,8 +10,8 @@ public final class Prof extends SalaryEmp {
 	  * Initializes an Prof object and sets data members
 	  */
 	public Prof() { 
-		super("NO_TA", "NO_TA", "TA00-0000-000", 0.0);
-		mDaysLeave = 0;
+		super("NO_PR", "NO_PR", "PR00-0000-000", 0.0);
+		this.mDaysLeave = 0;
 	}
 	/**
 	  * Constructor
@@ -24,7 +24,7 @@ public final class Prof extends SalaryEmp {
 	  */
 	public Prof(String _mFName, String _mGName, String _mIRD, double _mAPay, int _mDaysLeave) {
 		super(_mFName, _mGName, _mIRD, _mAPay);
-		mDaysLeave = _mDaysLeave;
+		this.mDaysLeave = _mDaysLeave;
 	}	
 	/**
 	  * Returns mDaysLeave 
@@ -35,13 +35,14 @@ public final class Prof extends SalaryEmp {
 	  * Mutates mDaysLeave
 	  * @param[in] _mDaysLeave Assigns mDaysLeave with the value _mDaysLeave
 	  */
-	public void setMDaysLeave(int _mDaysLeave) { mDaysLeave = _mDaysLeave; };
+	public void setMDaysLeave(int _mDaysLeave) { mDaysLeave = _mDaysLeave; }
 	/**
-	  * Displays the mIRD, mFName, mGName and monthly net pay for the Employee object
+	  * Converts Employee data members to strings and sets a format for display
+	  * @return formatted and concatenated string
 	  */
-	public void print() {
-		super.print();
-		System.out.print("$" + this.getNetMonthlyPay() + "\n");
+	@Override
+	public String toString(){
+		return super.toString() + String.format("$%-20s", getNetMonthlyPay());
 	}
 	/**
 	  * Calculates the monthly net wages for the Prof object less leave days
