@@ -26,7 +26,7 @@ public class Main {
 			totalToPay += emps[i].getNetMonthlyPay();
 			System.out.println(emps[i]);
 		}
-		System.out.println(toString("\nTotal wages this month: $", totalToPay));
+		System.out.println("\nTotal wages this month: $" + totalToPay);
 		//System.out.println("\nTotal wages this month: $" + totalToPay);
 		System.out.println("Thank you for using our program! Bye!");
 	}
