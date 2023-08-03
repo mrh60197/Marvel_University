@@ -20,7 +20,7 @@ public class Main {
 		emps[6] = new Prof();
 		emps[7] = new Prof("Steiger", "Ludwig", "65-102-456", 79345.00, 3);
 		emps[8] = new Prof("Flop", "Boby", "11-178-120", 69009.00, 0);
-		emps[9] = new Prof("Daisy", "Ana", "34-567-812", 67099.00, 3);		
+		emps[9] = new Prof("Maliyah", "Howell", "78-429-392", 75099.00, 2);		
 		double totalToPay = 0.0;		
 		for(int i = 0; i < SIZE; ++i) {
 			totalToPay += emps[i].getNetMonthlyPay();
